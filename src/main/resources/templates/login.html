@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Login</a>
+            <a href="/registration" class="right brand-logo">Register</a>
+        </div>
+    </nav>
+    <div class="container">
+    <div class="row">
+        <form class="col s12" th:action="@{/login}" th:object="${customer}" method="post">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" th:field="*{email}">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" th:field="*{password}">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
